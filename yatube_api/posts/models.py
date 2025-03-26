@@ -12,6 +12,10 @@ class Post(models.Model):
     image = models.ImageField(
         upload_to='posts/', null=True, blank=True)
 
+    def create(self, valdata):
+        p = Post.objects.create(**valdata)
+        return p
+
     def __str__(self):
         return self.text
 
