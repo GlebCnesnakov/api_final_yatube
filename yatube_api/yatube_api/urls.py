@@ -8,7 +8,10 @@ router = routers.DefaultRouter()
 router.register(r'posts', PostViewSet, basename='route')
 router.register(r'groups', GroupViewSet, basename='groups')
 router.register(r'follow', FollowViewSet, basename='follow')
-router.register(r'posts/(?P<post_id>\d+)/comments', CommentViewSet, basename='post-comments')
+router.register(
+    r'posts/(?P<post_id>\d+)/comments',
+    CommentViewSet,
+    basename='post-comments')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -21,4 +24,3 @@ urlpatterns = [
         name='redoc'
     ),
 ]
-
